@@ -28,7 +28,7 @@ pip install -r requirements.txt
 
 ### 2. Treinamento do Modelo NER Customizado
 
-Esta etapa cria o seu modelo de IA a partir dos dados anotados, certifique de que você esta na pasta spacyConfig.
+Esta etapa cria o seu modelo de IA a partir dos dados anotados, certifique de que você esta na pasta `spacyConfig`.
 
 **2.1. Download do Modelo Base:**
 O modelo customizado usa os "vetores de palavras" de um modelo grande do spaCy como ponto de partida. Baixe-o com o comando:
