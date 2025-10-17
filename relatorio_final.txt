@@ -1,0 +1,257 @@
+====================================================
+    RELATÓRIO DE ENTIDADES - MODELO CUSTOMIZADO     
+====================================================
+
+== TODA FORMA DE PODER ==
+- Fidel                          [PER]
+- Pinochet                       [PER]
+- ama                            [ACT]
+- ama                            [ACT]
+- dizem                          [ACT]
+- dizem                          [ACT]
+- dizem                          [ACT]
+- dizem                          [ACT]
+- dizem                          [ACT]
+- dizem                          [ACT]
+- faz                            [ACT]
+- faz                            [ACT]
+- faz                            [ACT]
+- morrer                         [ACT]
+- morrer                         [ACT]
+- presto atenção                 [ACT]
+- presto atenção                 [ACT]
+- presto atenção                 [ACT]
+- tiram sarro                    [ACT]
+
+== LONGE DEMAIS DAS CAPITAIS ==
+- Longe                          [ACT]
+- Longe                          [ACT]
+- Um dia                         [TEMP]
+- Um dia                         [TEMP]
+- Um dia                         [TEMP]
+- caio fora                      [ACT]
+- corre                          [ACT]
+- esperando                      [ACT]
+- esperar                        [ACT]
+- faz                            [ACT]
+- vivendo                        [ACT]
+- vou me embora                  [ACT]
+
+== A REVOLTA DOS DÂNDIS I ==
+- Defendendo                     [ACT]
+- Estava                         [ACT]
+- Estava                         [ACT]
+- assistiu                       [ACT]
+- balcão                         [TEMP]
+- bebi                           [ACT]
+- cigarro                        [PRODUTO]
+- conhaque                       [PRODUTO]
+- conhaque                       [PRODUTO]
+- justificar                     [ACT]
+- ofereceu                       [ACT]
+- pedi                           [ACT]
+
+== INFINITA HIGHWAY ==
+- Deserta highway
+               [ACT]
+- Do                             [ACT]
+- Estamos                        [ACT]
+- Estamos                        [ACT]
+- correr                         [ACT]
+- correr                         [ACT]
+- ir                             [ACT]
+- parar                          [ACT]
+- vamos                          [ACT]
+- viver                          [ACT]
+
+== TERRA DE GIGANTES ==
+- (Eu sei                        [ACT]
+- )                              [ACT]
+- Antigamente                    [TEMP]
+- guitarra elétrica              [PRODUTO]
+- propaganda                     [MIDIA]
+- refrigerantes                  [PRODUTO]
+
+== ATÉ O FIM ==
+- 24 horas                       [TEMP]
+- Entendo                        [ACT]
+- desistir                       [ACT]
+- desistir                       [ACT]
+- estão                          [ACT]
+- ir embora                      [ACT]
+- vai                            [ACT]
+- vim                            [ACT]
+- vim                            [ACT]
+- vou                            [ACT]
+
+== SOMOS QUEM PODEMOS SER ==
+- Somos                          [ACT]
+- Sonhos                         [ACT]
+- Um dia                         [TEMP]
+- Um dia                         [TEMP]
+- disseram                       [ACT]
+- disseram                       [ACT]
+- erram                          [ACT]
+- para                           [ACT]
+
+== REFRÃO DE BOLERO ==
+- Coisa                          [ACT]
+- Longe                          [ACT]
+- Mustang-68                     [PRODUTO]
+- almanaque                      [MIDIA]
+- cinema                         [MIDIA]
+- destaque                       [TEMP]
+- pedir                          [ACT]
+- perecível                      [ACT]
+- quis                           [ACT]
+- sempre                         [TEMP]
+- sonhei                         [ACT]
+
+== O PAPA É POP ==
+- John                           [PER]
+- Paul                           [PER]
+- Páginas                        [ACT]
+- comprando                      [ACT]
+- levou um tiro                  [ACT]
+- notícia                        [TEMP]
+- poupa                          [ACT]
+- poupa                          [ACT]
+- relendo                        [ACT]
+
+== ERA UM GAROTO QUE, COMO EU, AMAVA OS BEATLES E OS ROLLING STONES ==
+- Cantava                        [ACT]
+- Fazendo                        [ACT]
+- Girava                         [ACT]
+- amava                          [ACT]
+- engoliu                        [PRODUTO]
+- ensinam                        [ACT]
+- falou                          [ACT]
+- fazer                          [ACT]
+- usa                            [ACT]
+- vivendo                        [ACT]
+
+== ANDO SÓ ==
+- Ando                           [ACT]
+- Ando                           [ACT]
+- Ando                           [ACT]
+- ando                           [ACT]
+- nadar                          [ACT]
+- navegando                      [ACT]
+- voando                         [ACT]
+- voltar                         [ACT]
+
+== PIANO BAR ==
+- bar,                           [PRODUTO]
+- blue                           [PRODUTO]
+- desfaz                         [ACT]
+- espera                         [ACT]
+- estar                          [ACT]
+- estar                          [ACT]
+- faz                            [ACT]
+- noite                          [TEMP]
+- piano de                       [PRODUTO]
+- separa                         [ACT]
+- une                            [ACT]
+
+== NINGUÉM = NINGUÉM ==
+- Procurando                     [ACT]
+- aeromoça                       [ACT]
+- alerta                         [ACT]
+- co-piloto e                    [PRODUTO]
+- ir                             [ACT]
+- manhã                          [TEMP]
+
+== PARABÓLICA ==
+- Deixa                          [ACT]
+- Disparar                       [ACT]
+- Joga                           [ACT]
+- Olha                           [ACT]
+- Opala                          [PRODUTO]
+- Parabólica                     [ACT]
+- Parabólica                     [ACT]
+- abre                           [ACT]
+- fica                           [ACT]
+- girassol                       [PRODUTO]
+- para                           [ACT]
+- soar                           [ACT]
+
+== PRA SER SINCERO ==
+- Somos                          [ACT]
+- deixam                         [ACT]
+
+== A MONTANHA ==
+- Da                             [ACT]
+- Deixar                         [ACT]
+- Subir                          [ACT]
+- Vejo                           [ACT]
+- Vejo                           [ACT]
+- acontecer                      [ACT]
+- aquece                         [ACT]
+- começa                         [ACT]
+- começa                         [ACT]
+- dia                            [TEMP]
+- dia                            [TEMP]
+- encontrar                      [ACT]
+- encontrar                      [ACT]
+- ficar                          [ACT]
+- tira                           [ACT]
+
+== ALUCINAÇÃO ==
+- Amar                           [ACT]
+- Sonhar                         [ACT]
+- amei                           [ACT]
+- apanhas-te                     [ACT]
+- sonhei                         [ACT]
+- tentas                         [ACT]
+- vender                         [ACT]
+- ver                            [ACT]
+
+== EU QUE NÃO AMO VOCÊ ==
+- amo                            [ACT]
+- bate                           [ACT]
+- espera                         [ACT]
+- esperando                      [ACT]
+- violão                         [PRODUTO]
+
+== 3ª DO PLURAL ==
+- dizer                          [ACT]
+
+== DOM QUIXOTE ==
+- Dom                            [PRODUTO]
+- Lutando                        [ACT]
+- Quixote moderno                [ACT]
+- Um dia                         [TEMP]
+- chegar                         [ACT]
+- despedir                       [ACT]
+- pensar                         [ACT]
+- querer                         [ACT]
+- saí                            [ACT]
+- saí                            [ACT]
+- seguir                         [ACT]
+- sou                            [ACT]
+- voltar                         [ACT]
+
+== DANÇANDO NO CAMPO MINADO ==
+- Do                             [ACT]
+- correr                         [ACT]
+- dançamos                       [ACT]
+- dançamos                       [ACT]
+
+== VIDA REAL ==
+- arranja                        [ACT]
+- dia                            [TEMP]
+- inventa                        [ACT]
+- manhã                          [TEMP]
+- mocinhas                       [ACT]
+- reinventa                      [ACT]
+- vira                           [ACT]
+
+
+==================================
+  RESUMO AGREGADO POR CATEGORIA
+==================================
+- tipo ACT - ocorrência: 159
+- tipo TEMP - ocorrência: 18
+- tipo PRODUTO - ocorrência: 15
+- tipo PER - ocorrência: 4
+- tipo MIDIA - ocorrência: 3

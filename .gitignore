@@ -1,0 +1,6 @@
+__pycache__/
+spacyConfig/output/
+spacyConfig/*.spacy
+*.pyc
+.venv/
+venv/
