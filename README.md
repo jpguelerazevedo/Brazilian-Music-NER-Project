@@ -25,18 +25,17 @@ Estes passos são necessários para ambos os modelos.
 git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
 ```
 
-**1.2. Navegue até a Pasta de Trabalho:**
-É crucial executar todos os comandos de dentro da subpasta `spacyConfig`.
-```bash
-cd seu-repositorio/NER/spacyConfig
-```
-
-**1.3. Instale as Dependências:**
+**1.2. Instale as Dependências:**
 ```bash
 pip install -r requirements.txt
 ```
 
 ### 2. Opção A: Treinando e Usando o Modelo spaCy
+
+É crucial executar todos os comandos de dentro da subpasta `spacyConfig`.
+```bash
+cd seu-repositorio/NER/spacyConfig
+```
 
 **2.1. Download do Modelo Base:**
 ```bash
@@ -61,6 +60,11 @@ python mainSpacy.py
 
 ### 3. Opção B: Treinando e Usando o Modelo BERT
 
+É crucial executar todos os comandos de dentro da subpasta `bertConfig`.
+```bash
+cd seu-repositorio/NER/bertConfig
+```
+
 **3.1. Treinamento (Fine-tuning):**
 ```bash
 python bertFinetunning.py
@@ -75,7 +79,7 @@ python mainBert.py
 
 ---
 
-## 🏁 Resultados Finais e Comparação
+## Resultados Finais e Comparação
 
 O objetivo final é comparar as métricas de performance de cada modelo para determinar qual abordagem se saiu melhor nesta tarefa específica.
 
@@ -116,12 +120,7 @@ Com um F1-Score de **0.87**, o modelo BERT se mostrou o vencedor nesta comparaç
 
 **Porém, é importante notar um desafio técnico:** o modelo BERT, por sua natureza, quebra palavras desconhecidas em "subpalavras" (tokens), que aparecem com um prefixo `##` (ex: `Fidel` -> `Fi` + `##del`), o que inicialmente "danificou" a legibilidade do relatório de entidades. Isso demonstra que, embora o modelo BERT seja mais poderoso, ele pode ter complicações em sua execução em comparação com a saída mais direta do spaCy.
 
-Para uma análise visual e interativa dos gráficos de treinamento do BERT, utilize o TensorBoard:
-```bash
-# Execute em um novo terminal, na pasta spacyConfig
-tensorboard --logdir ./bert-ner-enghaw
-```
-*Abra o link `http://localhost:6006/` no seu navegador para ver o dashboard.*
+Para uma análise visual e interativa dos gráficos de treinamento do BERT, utilize o arquivo `avaliar_bert.py` dentro da pasta `bertConfig`.
 
 ---
 _Este README documenta o fluxo de trabalho de um projeto de PLN para análise e comparação de modelos NER em letras musicais._
