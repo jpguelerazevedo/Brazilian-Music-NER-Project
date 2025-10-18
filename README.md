@@ -1,76 +1,93 @@
-# Análise de Entidades em Letras de Engenheiros do Hawaii com spaCy
+# Análise Comparativa de NER em Letras de Músicas: spaCy vs. BERT
 
-Este projeto utiliza Processamento de Linguagem Natural (PLN) para treinar um modelo customizado de Reconhecimento de Entidades Nomeadas (NER) com a biblioteca spaCy. O objetivo é extrair e classificar entidades como Pessoas (`PER`), Lugares (`LOC`), Ações (`ACT`), Tempo (`TEMP`), Produtos (`PRODUTO`) e Mídia (`MIDIA`) das letras da banda brasileira Engenheiros do Hawaii.
+Este projeto de Processamento de Linguagem Natural (PLN) treina e compara dois modelos customizados para a tarefa de Reconhecimento de Entidades Nomeadas (NER). O objetivo é extrair e classificar entidades como Pessoas (`PER`), Lugares (`LOC`), Ações (`ACT`), Tempo (`TEMP`), Produtos (`PRODUTO`) e Mídia (`MIDIA`) das letras da banda brasileira Engenheiros do Hawaii.
 
+1.  Um modelo treinado do zero com a biblioteca **spaCy**.
+2.  Um modelo pré-treinado **BERT (BERTimbau)** que passa por um processo de fine-tuning com a biblioteca **Hugging Face Transformers**.
 
 ## Tecnologias Utilizadas
 * Python 3.9+
 * spaCy 3.x
+* Hugging Face Transformers
+* PyTorch
+* Datasets & Evaluate (Hugging Face)
 
 ## Como Rodar o Projeto: Passo a Passo
 
-Siga estas instruções para configurar o ambiente, treinar seu modelo do zero e executar a análise final. Todos os comandos devem ser executados de dentro da pasta `spacyConfig`.
+Siga estas instruções para configurar o ambiente e depois treinar e avaliar cada modelo.
 
-### 1. Configuração do Ambiente (Setup)
+### 1. Configuração do Ambiente (Setup Comum)
 
-Estes passos preparam seu computador para rodar o projeto.
+Estes passos são necessários para ambos os modelos.
 
 **1.1. Clone o Repositório:**
 ```bash
 git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
 ```
 
-**1.2. Instale as Dependências:**
-Este comando lê o arquivo `requirements.txt` e instala a versão correta do spaCy.
+**1.2. Navegue até a Pasta de Trabalho:**
+É crucial executar todos os comandos de dentro da subpasta `spacyConfig`.
+```bash
+cd seu-repositorio/NER/spacyConfig
+```
+
+**1.3. Instale as Dependências:**
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Treinamento do Modelo NER Customizado
-
-Esta etapa cria o seu modelo de IA a partir dos dados anotados, certifique de que você esta na pasta `spacyConfig`.
+### 2. Opção A: Treinando e Usando o Modelo spaCy
 
 **2.1. Download do Modelo Base:**
-O modelo customizado usa os "vetores de palavras" de um modelo grande do spaCy como ponto de partida. Baixe-o com o comando:
 ```bash
 python -m spacy download pt_core_news_lg
 ```
 
-**2.2. Preparação dos Dados de Treino:**
-Este comando lê as anotações do arquivo `dados_treino.py` e as converte para o formato binário (`.spacy`) que o spaCy utiliza.
+**2.2. Preparação dos Dados:**
 ```bash
 python preparar_dados.py
 ```
-*Isso irá gerar os arquivos `train.spacy` e `dev.spacy` nesta pasta.*
 
-**2.3. Execução do Treinamento:**
-Este é o comando principal, que usa todos os arquivos de configuração e dados para treinar o modelo. O processo pode levar vários minutos.
+**2.3. Treinamento:**
 ```bash
 python -m spacy train config.cfg --output ./output --paths.train ./train.spacy --paths.dev ./dev.spacy
 ```
-*Ao final, a pasta `output/model-best` será criada, contendo seu modelo treinado e pronto para uso.*
 
-### 3. Execução da Análise (usando o `main.py`)
-
-Com o modelo treinado, agora você pode usá-lo para analisar as músicas.
-
-**3.1. Rode o Script Principal:**
-Certifique-se de que você está fora da pasta `spacyConfig` e execute:
+**2.4. Execução da Análise:**
 ```bash
-python main.py
+python mainSpacy.py
 ```
+*Um relatório chamado `relatorio_final_Spacy.txt` será gerado.*
 
-**3.2. Verifique o Resultado:**
-O script irá carregar seu modelo da pasta `spacyConfig/output/model-best`, analisar todas as músicas do arquivo `musicas.json` e gerar um relatório completo chamado **`relatorio_final.txt`** na mesma pasta.
+### 3. Opção B: Treinando e Usando o Modelo BERT
+
+**3.1. Treinamento (Fine-tuning):**
+```bash
+python bertFinetunning.py
+```
+*O modelo final será salvo na pasta `bert-ner-enghaw`.*
+
+**3.2. Execução da Análise:**
+```bash
+python mainBert.py
+```
+*Um relatório chamado `relatorio_final_BERT.txt` será gerado.*
 
 ---
 
-## Resultados do Treinamento
+## 🏁 Resultados Finais e Comparação
 
-O modelo foi treinado com sucesso utilizando os dados e configurações descritos neste repositório. O processo de treinamento foi executado até que a pontuação no conjunto de validação parasse de melhorar, garantindo que salvamos a melhor versão do modelo.
+O objetivo final é comparar as métricas de performance de cada modelo para determinar qual abordagem se saiu melhor nesta tarefa específica.
 
-Abaixo está a tabela de progresso gerada pelo spaCy durante o treinamento:
+### Resultados - Modelo spaCy
 
+O treinamento com spaCy (otimizado para `accuracy`) foi um **sucesso**.
+
+* **Pontuação Máxima (F1-Score):** O modelo atingiu um `SCORE` de **0.83**.
+* **Aprendizado:** O `LOSS NER` chegou a `0.00`, confirmando que o modelo aprendeu perfeitamente os exemplos.
+* **Perfil:** No seu pico, o modelo demonstrou altíssima **Precisão (92.31%)** e bom **Recall (75.00%)**, indicando que é um modelo muito confiável.
+
+**Tabela de Progresso (spaCy):**
 ```
  E     #     LOSS TOK2VEC  LOSS NER  ENTS_F  ENTS_P  ENTS_R  SCORE
 ---  ------  ------------  --------  ------  ------  ------  ------
@@ -86,24 +103,25 @@ Abaixo está a tabela de progresso gerada pelo spaCy durante o treinamento:
 712    1800          0.00      0.00   75.86   84.62   68.75    0.76
 ```
 
-### Entendendo a Tabela
+### Resultados - Modelo BERT
 
-* **`E` (Época):** Cada "época" representa um ciclo completo de aprendizado sobre todos os dados de treino.
-* **`LOSS NER` (Erro):** Mostra o "erro" do modelo. O objetivo é que este número chegue o mais perto possível de zero, o que indica que o modelo aprendeu os exemplos.
-* **`ENTS_P` (Precisão):** De todas as entidades que o modelo *identificou*, qual a porcentagem de acerto.
-* **`ENTS_R` (Recall/Abrangência):** De todas as entidades que *existiam* no texto, qual a porcentagem que o modelo conseguiu encontrar.
-* **`ENTS_F` / `SCORE`:** A pontuação final e mais importante. É um balanço entre a Precisão e o Recall. Quanto mais perto de `1.00` (ou 100.00), melhor.
+O fine-tuning do modelo BERT (BERTimbau) também foi um **grande sucesso**, atingindo uma performance geral superior à do modelo spaCy.
 
-### Análise Resumida dos Resultados
+* **Pontuação Final (F1-Score):** **0.87** (`eval_f1: 0.8667`)
+* **Precisão (`eval_precision`):** **92.86%**
+* **Recall (`eval_recall`):** **81.25%**
 
-O treinamento foi um **sucesso**.
+**Análise Resumida:**
+Com um F1-Score de **0.87**, o modelo BERT se mostrou o vencedor nesta comparação. Ele não só atingiu uma **Precisão altíssima (92.86%)**, similar à do spaCy, mas também obteve um **Recall significativamente maior (81.25% vs 75.00% do spaCy)**. Isso significa que, além de ser muito confiável quando identifica uma entidade, o modelo BERT foi menos "tímido" e conseguiu **encontrar mais entidades** corretas no texto, tornando-o o modelo mais completo e eficaz para esta tarefa.
 
-O modelo atingiu uma pontuação máxima (`SCORE`) de **0.83** (na época 32), o que é um **resultado excelente** para um modelo customizado com este volume de dados.
+**Porém, é importante notar um desafio técnico:** o modelo BERT, por sua natureza, quebra palavras desconhecidas em "subpalavras" (tokens), que aparecem com um prefixo `##` (ex: `Fidel` -> `Fi` + `##del`), o que inicialmente "danificou" a legibilidade do relatório de entidades. Isso demonstra que, embora o modelo BERT seja mais poderoso, ele pode ter complicações em sua execução em comparação com a saída mais direta do spaCy.
 
--   **Aprendizado:** O `LOSS NER` chegou a `0.00`, confirmando que o modelo foi poderoso o suficiente para aprender perfeitamente os exemplos fornecidos.
--   **Performance:** No seu pico, o modelo demonstrou uma **Precisão** altíssima de **92.31%** e um **Recall** muito bom de **75.00%**. Isso significa que ele é extremamente confiável nas entidades que aponta e consegue encontrar a maioria das entidades existentes no texto.
-
-O spaCy salva automaticamente o melhor modelo deste treinamento na pasta `spacyConfig/output/model-best`, que é o utilizado pelo script `main.py` para a análise final.
+Para uma análise visual e interativa dos gráficos de treinamento do BERT, utilize o TensorBoard:
+```bash
+# Execute em um novo terminal, na pasta spacyConfig
+tensorboard --logdir ./bert-ner-enghaw
+```
+*Abra o link `http://localhost:6006/` no seu navegador para ver o dashboard.*
 
 ---
-_Este README documenta o fluxo de trabalho de um projeto de PLN para análise de letras musicais._
+_Este README documenta o fluxo de trabalho de um projeto de PLN para análise e comparação de modelos NER em letras musicais._
