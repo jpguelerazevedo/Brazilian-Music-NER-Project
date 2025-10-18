@@ -1,1 +1,9 @@
 spacy
+transformers
+datasets
+evaluate
+seqeval
+numpy
+torch
+safetensors
+tokenizers

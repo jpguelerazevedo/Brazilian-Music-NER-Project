@@ -5,7 +5,7 @@ from collections import Counter
 # --- CONFIGURAÇÃO ---
 CAMINHO_DO_MODELO = "spacyConfig/output/model-best"
 ARQUIVO_JSON_MUSICAS = "musicas.json"
-ARQUIVO_SAIDA_RELATORIO = "relatorio_final.txt"
+ARQUIVO_SAIDA_RELATORIO = "relatorio_final_Spacy.txt"
 
 
 def carregar_modelo_customizado(caminho):
